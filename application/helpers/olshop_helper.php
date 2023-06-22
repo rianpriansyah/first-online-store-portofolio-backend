@@ -6,8 +6,8 @@ function getDropdownList ($table, $columns) {
 
     if ($query->num_rows() >= 1) {
         $option1 = ['' => '- Select -'];
-        $option2 = array_column($query->result_array(), $column[1], $column[0]);
-        $option3 = $option1 + $option2;
+        $option2 = array_column($query->result_array(), $columns[1], $columns[0]);
+        $options = $option1 + $option2;
 
         return $options;
     }
@@ -41,7 +41,7 @@ function hashEncrypt ($input) {
 }
 
 function hashEncryptVerify ($input, $hash) {
-    if (password_hash($input, $hash)) {
+    if (password_verify($input, $hash)) {
         return true;
     } else {
         return false;
