@@ -25,7 +25,7 @@ class MY_Model extends CI_Model {
      */
     public function validate () {
         $this->load->library('form_validation');
-        $this->form_validation->set_error_delimeters(
+        $this->form_validation->set_error_delimiters(
             '<small class="form-text text-danger">', '</small>'
         );
         $validationRules = $this->getValidationRules();
@@ -56,7 +56,7 @@ class MY_Model extends CI_Model {
     }
 
     public function join ($table, $type = 'left') {
-        $this->db->join($table, "$this->table.id_table = $table.id", $type);
+        $this->db->join($table, "$this->table.id_$table = $table.id", $type);
         return $this;
     }
 
@@ -125,7 +125,7 @@ class MY_Model extends CI_Model {
             'first_tag_open'  => '<li class="page-item">',
             'first_tag_close'  => '</li>',
             'prev_link'  => '&laquo',
-            'prev_tag_open'  => '<li class="page-item"',
+            'prev_tag_open'  => '<li class="page-item">',
             'prev_tag_close'  => '</li>',
             'next_link'  => '&raquo',
             'next_tag_open'  => '<li class="page-item">',
