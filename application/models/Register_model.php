@@ -25,9 +25,9 @@ class Register_model extends MY_Model {
             [
                 'field'  => 'email',
                 'label'  => 'Email',
-                'rules'  => 'trim|required|valid_email|is_unique[user.email',
+                'rules'  => 'trim|required|valid_email|is_unique[user.email]',
                 'errors' => [
-                    'is_unique' => 'This %s already exist'
+                    'is_unique' => 'This %s already exists.'
                 ]
             ],
             [
@@ -48,7 +48,7 @@ class Register_model extends MY_Model {
 
     public function run($input) {
         $data = [
-            'nama'      => $input->name,
+            'name'      => $input->name,
             'email'     => strtolower($input->email),
             'password'  => hashEncrypt($input->password),
             'role'      => 'member'
@@ -68,4 +68,3 @@ class Register_model extends MY_Model {
     }
 }
 
-/* End of file Register_model.php *MY
