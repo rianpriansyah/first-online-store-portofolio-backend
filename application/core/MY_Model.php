@@ -96,6 +96,7 @@ class MY_Model extends CI_Model {
             $this->perPage,
             $this->calculateRealOffset($page)
         );
+        return $this;
     }
 
     public function calculateRealOffset($page) {
@@ -139,7 +140,7 @@ class MY_Model extends CI_Model {
         ];
 
         $this->pagination->initialize($config);
-        return $this->pagination->create_link();
+        return $this->pagination->create_links();
     }
 }
 
