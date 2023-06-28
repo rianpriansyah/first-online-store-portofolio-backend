@@ -60,12 +60,29 @@ class Product extends MY_Controller {
         }
 
         if ($this->product->create($input)) {
-            $this->session->set_flashdata('succes', 'Data berhasil disimpan!');
+            $this->session->set_flashdata('success', 'Data berhasil disimpan!');
         } else {
             $this->session->set_flashdata('error', 'Oops! Terjadi suatu kesalahan.');
         }
 
         redirect(base_url('product'));
+    }
+
+    public function unique_slug() {
+        $slug         = $this->input->post('slug');
+        $id           = $this->input->post('id');
+        $product     = $this->product->where('slug', $slug)->first();
+
+        if ($product) {
+            if ($id == $product->id) {
+                return true;
+            }
+            $this->load->library('form_validation');
+            $this->form_validation->set_message('unique_slug', '%s sudah digunakan!');
+            return false;
+        }
+
+        return true;
     }
 
 }
