@@ -1,11 +1,11 @@
 <main role="main" class="container">
-    <?php $this->load->view('layouts/_alert') ?>
+    <?php $this->load->view('layouts/_alert'); ?>
     <div class="row">
         <div class="col-md-10 mx-auto">
           <div class="card">
             <div class="card-header">
               <span>Produk</span>
-              <a href="/admin-product-form.html" class="btn btn-sm btn-secondary">Tambah</a>
+              <a href="<?= base_url('product/create'); ?>" class="btn btn-sm btn-secondary">Tambah</a>
               <div class="float-right">
                 <form action="#">
                   <div class="input-group">
