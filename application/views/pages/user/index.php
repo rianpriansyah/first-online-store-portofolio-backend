@@ -48,16 +48,12 @@
                     <td><?= $row->role ?></td>
                     <td><?= $row->is_active ? 'Aktif' : 'Tidak Aktif' ?></td>
                     <td>
-                      <form action="#">
-                        <a href="#">
-                          <button class="btn btn-sm">
-                            <i class="fas fa-edit text-info"></i>
-                          </button>
-                        </a>
-                        <button class="btn btn-sm" type="submit" onclick="return confirm('Apakah kamu yakin mau menghapus ini?')">
-                          <i class="fas fa-trash text-danger"></i>
-                        </button>
-                      </form>
+                      <a href="<?= base_url("user/edit/$row->id"); ?>" class="btn btn-sm">
+                        <i class="fas fa-edit text-info"></i>
+                      </a>
+                      <button class="btn btn-sm" type="submit" onclick="return confirm('Apakah kamu yakin mau menghapus ini?')">
+                        <i class="fas fa-trash text-danger"></i>
+                      </button>
                     </td>
                   </tr>
                   <?php endforeach ?>
