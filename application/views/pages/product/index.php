@@ -9,7 +9,7 @@
           <div class="float-right">
             <form action="<?= base_url("product/search") ?>" method="POST">
               <div class="input-group">
-                <input type="text" class="form-control form-control-sm text-center" placeholder="Cari" value="<?= $this->session->userdata('keyword') ?>"/>
+                <input type="text" name="keyword" class="form-control form-control-sm text-center" placeholder="Cari" value="<?= $this->session->userdata('keyword') ?>"/>
                 <div class="input-group-append">
                   <button class="btn btn-secondary btn-sm" type="submit">
                     <i class="fas fa-search"></i>
