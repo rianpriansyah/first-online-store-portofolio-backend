@@ -2,7 +2,7 @@
     <div class="card-header">Menu</div>
     <div class="list-group list-group-flush">
         <li class="list-group-item">
-            <a href="/profile.html">Profile</a>
+            <a href="<?= base_url("/profile"); ?>">Profile</a>
         </li>
         <li class="list-group-item">
             <a href="/orders.html">Orders</a>
