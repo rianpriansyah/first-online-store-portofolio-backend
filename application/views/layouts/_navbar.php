@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="<?= base_url('/'); ?>">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" id="dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</a>
@@ -21,7 +21,7 @@
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="/cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Cart(0)</a>
+          <a href="<?= base_url('cart'); ?>" class="nav-link"><i class="fas fa-shopping-cart"></i> Cart(<?= getCart();?>)</a>
         </li>
         <?php if (!$this->session->userdata('is_login')) : ?>
         <li class="nav-item">

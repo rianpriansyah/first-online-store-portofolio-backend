@@ -33,7 +33,7 @@ class Register_model extends MY_Model {
             [
                 'field' => 'password',
                 'label' => 'Password',
-                'rules' => 'trim|required|min_length[8]',
+                'rules' => 'required|min_length[8]',
             ],
             [
                 'field' => 'password_confirmation',

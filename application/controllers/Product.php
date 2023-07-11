@@ -30,7 +30,7 @@ class Product extends MY_Controller {
         ->get();
         $data['total_rows'] = $this->product->count();
         $data['pagination'] = $this->product->makePagination(
-            base_url('product'), 3, $data['total_rows']
+            base_url('product'), 2, $data['total_rows']
         );
         $data['page'] = 'pages/product/index';
         $this->view($data);

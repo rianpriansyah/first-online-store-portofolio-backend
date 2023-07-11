@@ -7,7 +7,7 @@
             <div class="col-md-12">
               <div class="card mb-3">
                 <div class="card-body">
-                  Kategori: <strong><?= isset($category) ? $category : 'Semua Kategory' ?></strong>
+                  Kategori: <strong><?= isset($category) ? $category : 'Semua Kategori' ?></strong>
                   <span class="float-right">Urutkan Harga: <a href="<?= base_url("/shop/sortby/asc") ?>" class="badge badge-primary">Termurah</a> | <a href="<?= base_url("/shop/sortby/desc") ?>" class="badge badge-primary">Termahal</a> </span>
                 </div>
               </div>
