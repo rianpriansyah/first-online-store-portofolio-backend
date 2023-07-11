@@ -5,23 +5,23 @@
           <div class="card">
             <div class="card-header">Formulir Alamat Pengiriman</div>
             <div class="card-body">
-              <form action="">
+              <form action="<?= base_url("/checkout/create"); ?>" method="POST">
                 <div class="form-group">
                   <label for="">Nama</label>
-                  <input type="text" class="form-control" name="name" placeholder="Masukan nama penerima" />
-                  <small class="form-text text-danger">Nama harus diisi.</small>
+                  <input type="text" class="form-control" name="name" placeholder="Masukan nama penerima" value="<?= $input->name ?>"/>
+                  <?= form_error('name') ?>
                 </div>
                 <div class="form-group">
                   <label for="">Alamat</label>
-                  <textarea class="form-control" name="address" id="" cols="30" rows="5"></textarea>
-                  <small class="form-text text-danger">Alamat harus diisi.</small>
+                  <textarea class="form-control" name="address" id="" cols="30" rows="5"><?= $input->address ?></textarea>
+                  <?= form_error('address') ?>
                 </div>
                 <div class="form-group">
                   <label for="">Telepon</label>
-                  <input type="text" class="form-control" name="phone" placeholder="Masukan nomor telepon" />
-                  <small class="form-text text-danger">Nomor Telepon harus diisi.</small>
+                  <input type="text" class="form-control" name="phone" placeholder="Masukan nomor telepon" value="<?= $input->phone ?>"/>
+                  <?= form_error('phone') ?>
                 </div>
-                <button class="btn btn-primary">Simpan</button>
+                <button class="btn btn-primary" type="submit">Simpan</button>
               </form>
             </div>
           </div>
