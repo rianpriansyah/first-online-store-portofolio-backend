@@ -1,6 +1,6 @@
 <?php
     if ($status == 'waiting') {
-        $badge_status = 'badge-primary';
+        $badge_status = 'badge-warning';
         $status       = 'Menunggu Pembayaran';
     }
 
