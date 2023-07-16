@@ -68,13 +68,13 @@ class Myorder extends MY_Controller {
             $imageName = url_title($invoice, '-', true) . '-' . date('YmdHis');
             $upload    = $this->myorder->uploadImage('image', $imageName);
             if ($upload) {
-                $data['image'] = $upload['file_name'];
+                $data['input']->image = $upload['file_name'];
             } else {
                 redirect(base_url("myorder/confirm/$invoice"));
             }
         }
 
-        if (!$this->product->validate()) {
+        if (!$this->myorder->validate()) {
             $data['title'] = 'Konfirmasi Order';
             $data['form_action'] = base_url("myorder/confirm/$invoice");
             $data['page'] = 'pages/myorder/confirm';
@@ -83,7 +83,7 @@ class Myorder extends MY_Controller {
             return;
         }
 
-        $this->myorder->table = 'orders_detail';
+        $this->myorder->table = 'orders_confirm';
 
         if ($this->myorder->create($data['input'])) {
             $this->myorder->table = 'orders';
@@ -95,6 +95,14 @@ class Myorder extends MY_Controller {
 
         redirect(base_url("myorder/detail/$invoice"));
 
+    }
+
+    public function image_required() {
+        if (empty($_FILES) || $_FILES['image']['name'] === '') {
+            $this->session->set_flashdata('image_error', 'Bukti transfer tidak boleh kosong!');
+            return false;
+        }
+        return true;
     }
 
 }
